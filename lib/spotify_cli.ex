@@ -1,13 +1,14 @@
 defmodule SpotifyCLI do
   def run() do
+    clear_screen()
     loop()
   end
 
   # Função principal de loop que exibe o menu e processa as escolhas do usuário.
   defp loop do
-    clear_screen()
     show_menu()
 
+    # Lê a opção escolhida pelo usuário e a converte para um número inteiro.
     option =
       IO.gets("> ")
       |> String.trim()
@@ -48,6 +49,7 @@ defmodule SpotifyCLI do
     IO.puts("Digite o nome do artista:")
     name = IO.gets("> ") |> String.trim()
 
+    # Chama a função de busca de artista no módulo SpotifyApp.
     case SpotifyApp.search_artist(name) do
       {:ok, artist} ->
         format_artist(artist)
@@ -125,7 +127,7 @@ defmodule SpotifyCLI do
          "genres" => genres,
          "followers" => %{"total" => followers},
          "external_urls" => %{"spotify" => spotify_url},
-         "images" => images
+         #"images" => images
        }) do
     IO.puts("\nInformações do(a) Artista:")
     IO.puts("\nNome: #{name}")
@@ -133,13 +135,13 @@ defmodule SpotifyCLI do
     IO.puts("Gêneros: #{Enum.join(genres, ", ")}")
     IO.puts("Seguidores: #{followers}")
     IO.puts("URL do Spotify: #{spotify_url}")
-    IO.puts("Imagens:")
+    #IO.puts("Imagens:")
 
-    Enum.each(images, fn image ->
-      IO.puts(" - URL: #{image["url"]} (#{image["width"]}x#{image["height"]})")
-    end)
+    #Enum.each(images, fn image ->
+    #  IO.puts(" - URL: #{image["url"]} (#{image["width"]}x#{image["height"]})")
+    #end)
 
-    IO.puts("\n")
+    IO.puts("-------------------------------------------------")
   end
 
   # Função para formatar e exibir informações de uma música.
@@ -155,7 +157,7 @@ defmodule SpotifyCLI do
     IO.puts("Álbum: #{album_name}")
     IO.puts("Data de Lançamento: #{release_date}")
     IO.puts("URL do Spotify: #{spotify_url}")
-    IO.puts("\n")
+    IO.puts("-------------------------------------------------")
   end
 
   # Caso a música não tenha informações de álbum.
@@ -176,26 +178,21 @@ defmodule SpotifyCLI do
          "name" => name,
          "artists" => artists,
          "release_date" => release_date,
-         "external_urls" => %{"spotify" => spotify_url},
-         "images" => images
+         "total_tracks" => total_tracks,
+         "external_urls" => %{"spotify" => spotify_url}
        }) do
     IO.puts("\nInformações do Álbum:")
     IO.puts("\nNome: #{name}")
     IO.puts("Artistas: #{Enum.map(artists, & &1["name"]) |> Enum.join(", ")}")
     IO.puts("Data de Lançamento: #{release_date}")
+    IO.puts("Total de Faixas: #{total_tracks}")
     IO.puts("URL do Spotify: #{spotify_url}")
-    IO.puts("Imagens:")
-
-    Enum.each(images, fn image ->
-      IO.puts(" - URL: #{image["url"]} (#{image["width"]}x#{image["height"]})")
-    end)
-
-    IO.puts("\n")
+    IO.puts("-------------------------------------------------")
   end
 
   # Função para encerrar o programa.
   defp exit_program do
-    IO.puts("Saindo...")
+    IO.puts("Bye bye cabron. Até logo!")
     System.halt()
   end
 end
