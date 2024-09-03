@@ -17,7 +17,7 @@ Requisitos Técnicos
 - Bibliotecas: HTTPoison e JSON
   
 ## Como executar
-Com o Elixir instalado, execute no terminal:
+Com o Elixir instalado e na pasta do diretório cloando, execute no terminal:
 ```shell
 mix deps.get
 mix run -e 'SpotifyCLI.run()'
