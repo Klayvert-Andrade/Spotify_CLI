@@ -17,7 +17,7 @@ Requisitos Técnicos
 - Bibliotecas: HTTPoison e JSON
   
 ## Como executar
-Com o Elixir instalado e na pasta do diretório cloando, execute no terminal:
+Com o Elixir instalado e na pasta do diretório clonado e suas credencias no arquivo `spotify_client.ex`, execute no terminal:
 ```shell
 mix deps.get
 mix run -e 'SpotifyCLI.run()'
@@ -38,7 +38,7 @@ Como Usar:
 ## Módulo SpotifyCli
 Este módulo Elixir oferece uma interface de linha de comando interativa para buscar e exibir informações sobre artistas, músicas e álbuns do Spotify.
 
-Funcionalidades
+Funcionalidades:
 
 - Menu Interativo: apresenta um menu com opções para buscar informações sobre artistas, músicas, álbuns, listar álbuns de um artista, listar faixas de um álbum e sair do programa.
 - Busca e Exibição de Informações: permite ao usuário inserir o nome de um artista, música ou álbum e exibe informações detalhadas sobre eles, incluindo nome, popularidade, gêneros, seguidores, URL do Spotify, etc.
@@ -51,7 +51,7 @@ Funcionalidades
 ## Módulo Spotify App
 Este módulo oferece funcionalidades para buscar e obter informações sobre artistas, álbuns e faixas da API do Spotify.
 
-Funcionalidades
+Funcionalidades:
 
 - Busca por Artista: permite buscar um artista pelo nome e retorna suas informações detalhadas, como nome, popularidade, gêneros, número de seguidores e URL do Spotify.
 - Busca por Música: permite buscar uma música pelo nome e retorna suas informações, como nome, artistas, álbum, data de lançamento e URL do Spotify.
