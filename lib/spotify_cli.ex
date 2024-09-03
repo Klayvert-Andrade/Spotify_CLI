@@ -34,7 +34,17 @@ defmodule SpotifyCLI do
 
   # Exibe o menu de opções para o usuário.
   defp show_menu do
-    IO.puts("MENU - Spotify CLI:")
+    IO.puts("")
+    IO.puts("                     _    _   __        ")
+    IO.puts("  ___  _ __    ___  | |_ (_) / _| _   _ ")
+    IO.puts(" / __|| '_ \\  / _ \\ | __|| || |_ | | | |")
+    IO.puts(" \\__ \\| |_) || (_) || |_ | ||  _|| |_| |")
+    IO.puts(" |___/| .__/  \\___/  \\__||_||_|   \\__, |")
+    IO.puts("      |_|                         |___/ ")
+    IO.puts("  _ __ ___    ___  _ __   _   _         ")
+    IO.puts(" | '_ ` _ \\  / _ \\| '_ \\ | | | |        ")
+    IO.puts(" | | | | | ||  __/| | | || |_| |        ")
+    IO.puts(" |_| |_| |_| \\___||_| |_| \\__,_|        ")
     IO.puts("\n1. Obter informações de um artista")
     IO.puts("2. Obter informações de uma música")
     IO.puts("3. Obter informações de um álbum")
@@ -192,7 +202,7 @@ defmodule SpotifyCLI do
 
   # Função para encerrar o programa.
   defp exit_program do
-    IO.puts("Bye bye cabron. Até logo!")
+    IO.puts("Saindo...")
     System.halt()
   end
 end
