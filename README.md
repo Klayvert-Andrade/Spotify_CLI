@@ -17,7 +17,7 @@ Requisitos Técnicos
 - Bibliotecas: HTTPoison e JSON
   
 ## Como executar
-Com o Elixir instalado e na pasta do diretório clonado e suas credencias no arquivo `spotify_client.ex`, execute no terminal:
+Com o Elixir instalado e na pasta do diretório clonado e suas credenciais preenchidas no módulo `spotify_client.ex`, execute no terminal:
 ```shell
 mix deps.get
 mix run -e 'SpotifyCLI.run()'
